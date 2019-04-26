@@ -1,0 +1,22 @@
+{
+  "name": "wetube",
+  "version": "1.0.0",
+  "description": "youtube clone coding",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/minhanPark/wetube.git"
+  },
+  "author": "runningwater",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/minhanPark/wetube/issues"
+  },
+  "homepage": "https://github.com/minhanPark/wetube#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
