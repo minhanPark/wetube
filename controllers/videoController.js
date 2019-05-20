@@ -116,7 +116,7 @@ export const postRegisterView = async (req, res) => {
 		video.views += 1;
 		video.save();
 		res.status(200);
-	} catch {
+	} catch (error) {
 		res.status(400);
 	} finally {
 		res.end();
