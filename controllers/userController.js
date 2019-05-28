@@ -70,13 +70,7 @@ export const logout = (req, res) => {
 
 export const facebookLogin = passport.authenticate("facebook");
 
-export const facebookLoginCallback = async (
-	accessToken,
-	refreshToken,
-	profile,
-	cb
-) => {
-	console.log(accessToken, refreshToken, profile, cb);
+export const facebookLoginCallback = async (_, __, profile, cb) => {
 	const {
 		_json: { id, name, email }
 	} = profile;
@@ -134,7 +128,7 @@ export const postEditProfile = async (req, res) => {
 		await User.findByIdAndUpdate(req.user.id, {
 			name,
 			email,
-			avatarUrl: file ? file.path : req.user.avatarUrl
+			avatarUrl: file ? file.location : req.user.avatarUrl
 		});
 		res.redirect(routes.me);
 	} catch (error) {
