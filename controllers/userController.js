@@ -70,7 +70,13 @@ export const logout = (req, res) => {
 
 export const facebookLogin = passport.authenticate("facebook");
 
-export const facebookLoginCallback = async (_, __, profile, cb) => {
+export const facebookLoginCallback = async (
+	accessToken,
+	refreshToken,
+	profile,
+	cb
+) => {
+	console.log(accessToken, refreshToken, profile, cb);
 	const {
 		_json: { id, name, email }
 	} = profile;
